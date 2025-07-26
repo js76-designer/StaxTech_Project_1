@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Rajdhani', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  background-color: #0a0a23;
+  color: #fff;
+}
+
+.background-digital {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #001f3f 0%, #001122 100%);
+  overflow: hidden;
+  z-index: -1;
+  animation: pulseBg 10s infinite alternate;
+}
+
+.background-digital::before {
+  content: "💲💱💹💴💶💷💵";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 120px;
+  opacity: 0.03;
+  animation: float 12s infinite linear;
+}
+
+@keyframes pulseBg {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translate(-50%, 0); }
+  100% { transform: translate(-50%, -100vh); }
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 255, 255, 0.1);
+  padding: 40px 50px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  text-align: center;
+  width: 90%;
+  max-width: 420px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00ffe7;
+  text-shadow: 0 0 15px #00ffe7;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+input, select {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  outline: none;
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+input:focus, select:focus {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+select option {
+  background-color: #1b1b3a;
+  color: #fff;
+}
+
+button {
+  background-color: #00ffd5;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #00c2a8;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #00ffd5;
+  text-shadow: 0 0 10px #00ffd5;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.dropdowns select {
+  width: 45%;
+  z-index: 1;
+}
